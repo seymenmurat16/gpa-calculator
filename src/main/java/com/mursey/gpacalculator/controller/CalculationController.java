@@ -1,6 +1,7 @@
 package com.mursey.gpacalculator.controller;
 
 import com.mursey.gpacalculator.entity.Lecture;
+import com.mursey.gpacalculator.enums.Note;
 import com.mursey.gpacalculator.model.DepartmentModel;
 import com.mursey.gpacalculator.model.LectureListForm;
 import com.mursey.gpacalculator.service.CalculationService;
@@ -11,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+@CrossOrigin(origins = "http://localhost:3000")
 
 @RestController
 @RequestMapping("/api")
@@ -37,5 +39,10 @@ public class CalculationController {
     @GetMapping("/departments")
     public ResponseEntity<List<DepartmentModel>> getDepartments() {
         return ResponseEntity.ok(departmentService.getAllDepartments());
+    }
+
+    @GetMapping("/notes")
+    public ResponseEntity<List<String>> getNotes() {
+        return ResponseEntity.ok(Note.AA.getAllNotes());
     }
 }

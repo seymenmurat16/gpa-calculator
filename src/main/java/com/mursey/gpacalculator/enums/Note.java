@@ -21,6 +21,7 @@ public enum Note {
         this.coefficient = coefficient;
     }
 
+
     public double getCoefficient() {
         return coefficient;
     }
